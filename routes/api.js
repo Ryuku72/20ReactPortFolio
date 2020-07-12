@@ -14,5 +14,16 @@ router.get("/api/projectinfo", function (req, res) {
     .catch(err => res.status(422).json(err))
 });
 
+router.post("/api/projectinfo", function (req, res) {
+    //new request = new ID
+    db.Post.create({ req })
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((error) => {
+        res.json(error);
+      });
+  });
+
 
 module.exports = router;
