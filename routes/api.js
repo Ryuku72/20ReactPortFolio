@@ -6,7 +6,7 @@ router.route("/")
 
 router.get("/api/assignment", function (req, res) {
     console.log(req.body);
-    db.assignment.find({})
+    db.assignment.findOne({})
     .then((data) => {
         console.log(data);
         res.json(data);

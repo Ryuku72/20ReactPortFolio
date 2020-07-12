@@ -229,7 +229,7 @@ const projects = [
     },
 ]
 
-db.assignment.find({})
+db.assignment.findOne({})
     .then(() => db.assignment.collection.insertMany(projects))
     .then(data => {
     console.log(data.result.n + " records inserted!");
