@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+const URI = require("../config/index")
 
-mongoose.connect("mongodb://localhost/projects", {
+//mongoose.connect("mongodb://localhost/assignment", {
+mongoose.connect(URI, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
@@ -11,7 +13,8 @@ mongoose.connect("mongodb://localhost/projects", {
 console.log(`DataBase Connection Error: ${err.message}`);
 });;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projects");
+mongoose.connect(process.env.MONGODB_URI || URI);
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/assignment");
 
 const projects = [
     {
@@ -226,8 +229,8 @@ const projects = [
     },
 ]
 
-db.Post.find({})
-    .then(() => db.Post.collection.insertMany(projects))
+db.assignment.find({})
+    .then(() => db.assignment.collection.insertMany(projects))
     .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);   

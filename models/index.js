@@ -1,4 +1,4 @@
 module.exports = {
-    projects: require("./projects")
+    assignment: require("./assignment")
   };
   

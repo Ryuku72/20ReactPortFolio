@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan")
+const URI = require("./config/index")
 
 //Port
 const app = express();
@@ -17,12 +18,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-//Routes
-app.use(require("./routes/api"));
-app.use(require("./routes/html"));
-
 // Mongoose
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/projects";
+//const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/assignment";
+require("./models")
+
+const MONGODB_URI = process.env.MONGODB_URI || URI;
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false,
@@ -33,11 +33,9 @@ mongoose.connect(MONGODB_URI, {
 console.log(`DB Connection Error: ${err.message}`);
 });;
 
-mongoose.connection
-  .once("open", () => console.log("Connected to Mongoose"))
-  .on("error", (error) => {
-    console.log("Your Error: ", error);
-  });
+//Routes
+app.use(require("./routes/api"));
+app.use(require("./routes/html"));
 
 // Start the API server
 app.listen(PORT, function() {

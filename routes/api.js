@@ -4,9 +4,9 @@ const db = require("../models");
 
 router.route("/")
 
-router.get("/api/projects", function (req, res) {
+router.get("/api/assignment", function (req, res) {
     console.log(req.body);
-    db.Post.find({})
+    db.assignment.find({})
     .then((data) => {
         console.log(data);
         res.json(data);
@@ -14,9 +14,9 @@ router.get("/api/projects", function (req, res) {
     .catch(err => res.status(422).json(err))
 });
 
-router.post("/api/projects", function (req, res) {
+router.post("/api/assignment", function (req, res) {
     //new request = new ID
-    db.Post.create({ req })
+    db.assignment.create({ req })
       .then((result) => {
         res.json(result);
       })
