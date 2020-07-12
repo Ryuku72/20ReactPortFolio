@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-mongoose.connect("mongodb://localhost/projectinfo", {
+mongoose.connect("mongodb://localhost/projects", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
@@ -11,7 +11,7 @@ mongoose.connect("mongodb://localhost/projectinfo", {
 console.log(`DataBase Connection Error: ${err.message}`);
 });;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projectinfo");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projects");
 
 const projects = [
     {

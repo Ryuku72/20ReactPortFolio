@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const postSchema = new Schema({
+const projectschema = new Schema({
   project: { type: String, required: true },
   title: { type: String, required: true },
   date: { type: String, required: true },
@@ -15,6 +15,6 @@ const postSchema = new Schema({
   clip_path: { type: String , required: true}
 });
 
-const Post = mongoose.model("Post", postSchema);
+const projects = mongoose.model("projects", projectschema);
 
-module.exports = Post;
+module.exports = projects;

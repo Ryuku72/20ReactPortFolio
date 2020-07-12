@@ -4,7 +4,7 @@ const db = require("../models");
 
 router.route("/")
 
-router.get("/api/projectinfo", function (req, res) {
+router.get("/api/projects", function (req, res) {
     console.log(req.body);
     db.Post.find({})
     .then((data) => {
@@ -14,7 +14,7 @@ router.get("/api/projectinfo", function (req, res) {
     .catch(err => res.status(422).json(err))
 });
 
-router.post("/api/projectinfo", function (req, res) {
+router.post("/api/projects", function (req, res) {
     //new request = new ID
     db.Post.create({ req })
       .then((result) => {
