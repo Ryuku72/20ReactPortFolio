@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const chalk = require("chalk")
 
 //Port
 const PORT = process.env.PORT || 3001;
@@ -14,20 +13,13 @@ if (process.env.NODE_ENV === "production") {
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 
 // Start the API server
-app.listen(PORT, function () {
-    console.log(
-      chalk.bold.blue("Listening on port %s. 🌎"),
-      chalk.bold.yellow(PORT) +
-        chalk.bold.green("\nVisit ") +
-        chalk.bold.blue("http://localhost:") +
-        chalk.bold.yellow(PORT) +
-        chalk.bold.blue("/") +
-        chalk.bold.green(" in your browser")
-    );
+app.listen(PORT, function() {
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
+  
