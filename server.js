@@ -16,7 +16,18 @@ app.use(require("./routes/html.js"));
 app.use(require("./routes/api.js"))
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projectinfo");
+
+// Mongoose
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/projectinfo";
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('DB Connected!'))
+.catch(err => {
+console.log(`DB Connection Error: ${err.message}`);
+});
 
 // Start the API server
 app.listen(PORT, function() {
