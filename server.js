@@ -13,10 +13,10 @@ if (process.env.NODE_ENV === "production") {
 
 //Routes
 app.use(require("./routes/html.js"));
+app.use(require("./routes/api.js"))
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projectinfo");
 
 // Start the API server
 app.listen(PORT, function() {
