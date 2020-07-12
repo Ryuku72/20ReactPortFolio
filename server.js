@@ -1,13 +1,14 @@
 //NPM packages
 const express = require("express");
 const mongoose = require("mongoose");
-const logger = require("morgan");
+const logger = require("morgan")
 
 //Port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //Middleware
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
