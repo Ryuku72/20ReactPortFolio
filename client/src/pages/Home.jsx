@@ -13,17 +13,18 @@ function Home(){
     // Loads all books and sets them to books
     function loadProjects() {
     API.getPosts()
-      .then(res => 
+      .then(res => {
+        console.log(res.data)
         setProjects(res.data)
-      )
+      })
       .catch(err => console.log(err));
   };
 
     return (
         <div className="w-full h-screen">
             <h1>Lets begin</h1>   
-              {projects.posts.map(post =>
-             <ul>
+              {projects.map(post =>
+             <ul key={post._id}>
             <li>{post._id}</li>
             <li>{post.clip_path}</li>
             <li>{post.project}</li>

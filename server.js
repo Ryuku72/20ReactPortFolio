@@ -1,10 +1,13 @@
 //NPM packages
 const express = require("express");
 const mongoose = require("mongoose");
-
-//Port
 const app = express();
+
 const PORT = process.env.PORT || 3001;
+
+//Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -12,10 +15,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //Routes
-app.use(require("./routes/html.js"));
-app.use(require("./routes/api.js"))
-
-// Connect to the Mongo DB
+app.use(require("./routes/api"));
+app.use(require("./routes/html"))
 
 // Mongoose
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/projectinfo";
@@ -24,10 +25,10 @@ mongoose.connect(MONGODB_URI, {
   useFindAndModify: false,
   useUnifiedTopology: true,
 })
-.then(() => console.log('DB Connected!'))
+.then(() => console.log('Database Connected!'))
 .catch(err => {
 console.log(`DB Connection Error: ${err.message}`);
-});
+});;
 
 // Start the API server
 app.listen(PORT, function() {

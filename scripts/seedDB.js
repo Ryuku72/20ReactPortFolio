@@ -6,9 +6,9 @@ mongoose.connect("mongodb://localhost/projectinfo", {
   useFindAndModify: false,
   useUnifiedTopology: true
 })
-.then(() => console.log('DB Connected!'))
+.then(() => console.log('Database Connected!'))
 .catch(err => {
-console.log(`DB Connection Error: ${err.message}`);
+console.log(`DataBase Connection Error: ${err.message}`);
 });;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projectinfo");
