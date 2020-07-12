@@ -6,6 +6,6 @@ const dbcode =
 //"42av2dqmnoqhqdrask0dvno704";
 process.env.DB_PASS;
 
-const MONGODB_URI = `mongodb://${dbuser}:${dbcode}@ds263638.mlab.com:63638/heroku_07lhttrp`
+const MONGODB_URI = (`mongodb://${dbuser}:${dbcode}@ds263638.mlab.com:63638/heroku_07lhttrp`, {useNewUrlParser: true})
 
 module.exports = MONGODB_URI;
