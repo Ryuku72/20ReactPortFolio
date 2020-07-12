@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/' || process.env.MONGODB_URI,
+  baseURL: process.env.MONGODB_URI || 'http://localhost:3000/'
 })
 
 export const getPosts = () => api.get("api/assignment")
