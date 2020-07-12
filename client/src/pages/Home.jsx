@@ -21,10 +21,10 @@ function Home(){
   };
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-full">
             <h1>Lets begin</h1>   
               {projects.map(post =>
-             <ul key={post._id}>
+             <ul key={post._id} className="mb-4 border-2 border-b-black">
             <li>{post._id}</li>
             <li>{post.clip_path}</li>
             <li>{post.project}</li>
