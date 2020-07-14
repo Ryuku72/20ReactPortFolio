@@ -12,7 +12,7 @@ function Home(){
 
     // Loads all books and sets them to books
     function loadProjects() {
-    API.getPosts()
+    API.getProjects()
       .then(res => {
         console.log(res.data)
         setProjects(res.data)

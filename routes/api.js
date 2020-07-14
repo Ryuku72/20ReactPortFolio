@@ -2,28 +2,22 @@ const express = require("express")
 const router = express.Router();
 const db = require("../models");
 
-router.route("/")
-
-router.get("/api/assignment", function (req, res) {
-    console.log(req.body);
-    db.assignment.findOne({})
-    .then((data) => {
-        console.log(data);
+router.get("/api/projects", (req, res) => {
+    db.Project.find({})
+    .then(data => {
         res.json(data);
       })
-    .catch(err => res.status(422).json(err))
+    .catch(err => res.status(404).json(err))
 });
 
-router.post("/api/assignment", function (req, res) {
-    //new request = new ID
-    db.assignment.create({ req })
-      .then((result) => {
+router.post("/api/projects", function (req, res) {
+    db.Project.create({ req })
+      .then(result => {
         res.json(result);
       })
-      .catch((error) => {
+      .catch(error => {
         res.json(error);
       });
   });
 
-
-module.exports = router;
+  module.exports = router;
