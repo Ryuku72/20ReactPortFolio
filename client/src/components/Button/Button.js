@@ -14,7 +14,7 @@ function Button(props) {
   console.log(props.link)
         if (document) {
           return (
-            <div className="flex">
+            <div className="flex px-6">
             <div className="mr-2 dropdown relative">
             <button type="button" className="text-gray-700 w-full font-semibold py-2 px-4 rounded inline-block items-center shadow-xl border-gray-500 border-2" 
             style={{backgroundColor:`${buttonType}`}} 
