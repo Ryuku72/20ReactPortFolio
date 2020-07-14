@@ -24,7 +24,9 @@ app.use(require("./routes"));
 // mongodb+srv://<username>:<password>@reactapp.t7dug.mongodb.net/<dbname>?retryWrites=true&w=majority
 // Set the MONGO_URI environment variable in your heroku deploy:
 // https://devcenter.heroku.com/articles/config-vars#using-the-heroku-cli
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/profile');
+mongoose.connect(process.env.MONGO || 'mongodb://localhost/profile');
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+//mongodb+srv://Ryuku72:7201Ryuku@foreigntoolkit.pqhje.mongodb.net/<ForeignToolKit>?retryWrites=true&w=majority
