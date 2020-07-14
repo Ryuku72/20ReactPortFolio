@@ -22,7 +22,7 @@ function Home(){
   };
 
     return (
-        <div className="grid grid-cols-3 gap-3 grid-flow-row w-full">    
+        <div className="grid xl:grid-cols-3 sm:grid-cols-1 gap-8 grid-flow-row w-full bg-blue-900">    
               {projects.map(post =>
               <Card 
             key={post._id}
