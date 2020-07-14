@@ -4,14 +4,15 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "@wannabewayno/reactor": "^0.2.0",
+    "autoprefixer": "^9.8.5",
     "axios": "^0.19.2",
+    "postcss-cli": "^7.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27",
-    "autoprefixer": "^9.8.5",
-    "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.4.6"
   },
   "scripts": {
