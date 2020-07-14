@@ -7,6 +7,6 @@ export default {
   },
   // Gets the book with the given id
   getProject: function(id) {
-    return axios.get("/api/projects/" + id);
+    return axios.get("/api/projects" + id);
   },
 };

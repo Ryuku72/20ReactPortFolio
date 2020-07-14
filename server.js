@@ -11,12 +11,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Define API routes here
-app.use(require("./routes/api"));
+app.use(require("./routes"));
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+
 // Connect to the Mongo DB
 // This uses mongodb atlas (https://www.mongodb.com/cloud/atlas)
 // Follow the steps to create a free mongo db cluster.
