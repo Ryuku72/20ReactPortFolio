@@ -9,13 +9,13 @@ function Home(){
         loadProjects()
       }, [])
 
-    console.log(projects)
+    //console.log(projects)
 
     // Loads all books and sets them to books
     function loadProjects() {
     API.getProjects()
       .then(res => {
-        console.log(res.data)
+        //console.log(res.data)
         setProjects(res.data)
       })
       .catch(err => console.log(err));
