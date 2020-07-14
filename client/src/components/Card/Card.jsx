@@ -4,7 +4,7 @@ import "./style.css";
 
 function Card(props) {
   
-    console.log(props.length)
+   //console.log(props.length)
     return(
       <div className="relative flex flex-col items-center justify-center rounded-lg mt-4 shadow-lg font-mono text-gray-900 w-full px-32 py-48 bg-gray-300"> 
         <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center align-middle overflow-hidden text-lg capitalize p-10 z-10 rounded-lg">

@@ -11,7 +11,7 @@ const color = {
 function Button(props) {
   const buttonType = color[props.type]
   const document = props.link
-  console.log(props.link)
+  //console.log(props.link)
         if (document) {
           return (
             <div className="flex px-6">
